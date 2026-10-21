@@ -1,0 +1,13 @@
+[Unit]
+Description=Restore course RAID and LVM from existing loop images
+After=local-fs.target
+Before=my-app.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/course-storage start
+RemainAfterExit=yes
+TimeoutStartSec=120
+
+[Install]
+WantedBy=multi-user.target
