@@ -1,0 +1,4 @@
+*
+!Dockerfile
+!script.sh
+!container-entrypoint.sh
