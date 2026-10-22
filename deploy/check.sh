@@ -12,6 +12,7 @@ run hostname
 run docker ps -a --filter name=my-app
 run docker image inspect my-script:latest --format '{{.Id}}'
 run sudo /usr/local/sbin/course-storage status
+run curl -fsSI --max-time 10 http://127.0.0.1:8080/monitor.log
 run sudo nginx -t
 run curl -sSI --max-time 10 http://127.0.0.1/monitor.log
 redirect=$(curl -sS --max-time 10 -o /dev/null -w '%{http_code}' http://127.0.0.1/monitor.log)
